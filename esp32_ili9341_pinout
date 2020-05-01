@@ -1,0 +1,26 @@
+For anyone searching in the future. Here is a pinout that will get the ESP32 working with TFT & Touch & SD card.....
+
+
+TOUCH SPI CONNECTIONS (HSPI) - set up in User_setup.h (Note #define USE_HSPI_PORT uncommented in User_setup.h ) :            
+*        T_IRQ                      No connection required          
+*        T_DO                       12
+*        T_DIN                      13
+*        T_CS                        33 //set in User_setup.h                
+*        T_CLK                      14  
+
+TFT ILI9341 SPI CONNECTIONS (HSPI) - set up in User_setup.h :                                                       
+*        SDO(MISO)             12                                      
+*        LED                            3.3V                        
+*        SCK                             14                          
+*        SDI(MOSI)               13
+*        DC                              2                                                          
+*        RESET                       4                                                      
+*        CS                               15
+*        GND                          gnd                                                    
+*        VCC                           3.3V                                                  
+                                                                                              
+TFT SD CARD CONNECTIONS (VSPI):                                      
+*        SD_SCK                    18                                                
+*        SD_MISO                 19                                                
+*        SD_MOSI                 23                                                
+*        SD_CS                       5       set in .h header using SDFat library
